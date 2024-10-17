@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Relatório de Clientes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 20px 0;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+    <script>
+        // Função para carregar e exibir os clientes cadastrados
+        function carregarRelatorioClientes() {
+            const clientes = JSON.parse(localStorage.getItem("clientes")) || [];
+
+            const tabela = document.getElementById("relatorioClientes");
+            clientes.forEach((cliente) => {
+                const row = tabela.insertRow();
+                row.insertCell(0).innerText = cliente.nome;
+                row.insertCell(1).innerText = cliente.email;
+                row.insertCell(2).innerText = cliente.telefone;
+                row.insertCell(3).innerText = cliente.endereco;
+            });
+        }
+
+        window.onload = carregarRelatorioClientes;
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>Startup Segurança Alimentar</h1>
+    </header>
+
+    <!-- Navegação -->
+    <nav>
+        <a href="layout.html">Início</a>
+        <a href="produtos.html">Cadastro de Produtos</a>
+        <a href="clientes.html">Cadastro de Clientes</a>
+        <a href="vendas.html">Vendas</a>
+        <a href="relatorios_selecao.html">Relatórios</a>
+    </nav>
+
+    <!-- Relatório de Clientes -->
+    <h2>Relatório de Clientes</h2>
+    <table border="1" id="relatorioClientes">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Endereço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Clientes serão carregados aqui -->
+        </tbody>
+    </table>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Startup de Segurança Alimentar. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

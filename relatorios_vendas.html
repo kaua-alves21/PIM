@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Relatório de Vendas</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o seu CSS principal -->
+    <style>
+        .relatorio-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 900px;
+            margin: 20px auto; /* Centraliza o container na página */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #f9f9f9;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        table th {
+            background-color: #007bff; /* Cor do cabeçalho da tabela */
+            color: white;
+        }
+
+        .total-container {
+            text-align: right;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Startup Segurança Alimentar</h1>
+        <p>&nbsp;</p>
+    </header>
+
+    <!-- Navegação -->
+    <nav>
+        <a href="layout.html">Início</a>
+        <a href="produtos.html">Cadastro de Produtos</a>
+        <a href="clientes.html">Cadastro de Clientes</a>
+        <a href="vendas.html">Vendas</a>
+        <a href="relatorios_selecao.html">Relatórios</a>
+    </nav>
+
+    <!-- Conteúdo Dinâmico -->
+    <div id="content">
+        <div class="relatorio-container">
+            <h1>Relatório de Vendas</h1>
+
+            <!-- Tabela de vendas -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody id="relatorioTabelaBody">
+                    <!-- As vendas serão inseridas aqui -->
+                </tbody>
+            </table>
+
+            <!-- Total -->
+            <div class="total-container">
+                Valor total: <span id="valorTotal">0.00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 Startup de Segurança Alimentar. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="load-content.js"></script>
+    <script>
+        // Função para carregar os dados do localStorage e exibir no relatório
+        function carregarRelatorio() {
+            const vendas = JSON.parse(localStorage.getItem('vendas')) || [];
+            const totalPorCliente = {};
+            let totalGeral = 0;
+
+            vendas.forEach(venda => {
+                const { cliente, produto, quantidade, valor } = venda;
+
+                // Acumula o valor por cliente
+                if (!totalPorCliente[cliente]) {
+                    totalPorCliente[cliente] = { total: 0, produtos: [] };
+                }
+                totalPorCliente[cliente].total += valor;
+                totalPorCliente[cliente].produtos.push({ produto, quantidade, valor });
+            });
+
+            const tabela = document.getElementById('relatorioTabelaBody');
+            tabela.innerHTML = ''; // Limpar tabela antes de adicionar os novos dados
+
+            // Adicionar as vendas à tabela
+            for (const cliente in totalPorCliente) {
+                const vendasCliente = totalPorCliente[cliente];
+                vendasCliente.produtos.forEach(item => {
+                    const novaLinha = document.createElement('tr');
+                    novaLinha.innerHTML = `<td>${cliente}</td><td>${item.produto}</td><td>${item.quantidade}</td><td>R$ ${item.valor.toFixed(2)}</td>`;
+                    tabela.appendChild(novaLinha);
+                });
+
+                // Adicionar linha com o total do cliente
+                const linhaTotal = document.createElement('tr');
+                linhaTotal.innerHTML = `<td><strong>Total de ${cliente}</strong></td><td></td><td></td><td><strong>R$ ${vendasCliente.total.toFixed(2)}</strong></td>`;
+                tabela.appendChild(linhaTotal);
+
+                // Acumular total geral
+                totalGeral += vendasCliente.total;
+            }
+
+            // Atualizar o valor total
+            document.getElementById('valorTotal').innerText = totalGeral.toFixed(2);
+        }
+
+        // Chamar a função para carregar o relatório ao carregar a página
+        window.onload = carregarRelatorio;
+    </script>
+
+</body>
+
+</html>

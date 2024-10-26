@@ -12,7 +12,6 @@
         function salvarProduto(event) {
             event.preventDefault();
 
-            // Captura os valores dos campos do formulário
             const categoria = document.getElementById("categoria").value;
             const dataPlantio = document.getElementById("data_plantio").value;
             const nomeProduto = document.getElementById("nome_produto").value;
@@ -20,8 +19,8 @@
             const preco = document.getElementById("preco").value;
             const disponivel = document.getElementById("disponivel").value;
 
-            // Cria um objeto com os dados do produto
             const produto = {
+                id: Date.now(),
                 categoria: categoria,
                 dataPlantio: dataPlantio,
                 nomeProduto: nomeProduto,
@@ -30,32 +29,54 @@
                 disponivel: disponivel
             };
 
-            // Recupera a lista de produtos do LocalStorage ou cria uma lista vazia
             let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
-
-            // Adiciona o novo produto à lista
             produtos.push(produto);
-
-            // Salva a lista atualizada no LocalStorage
             localStorage.setItem("produtos", JSON.stringify(produtos));
 
-            // Reseta o formulário
             document.getElementById("produtoForm").reset();
-
             alert("Produto cadastrado com sucesso!");
         }
     </script>
     <style>
-        body {
+        /* Estilos de layout */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
         }
 
+        /* Define o conteúdo principal para ocupar o espaço disponível */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        header {
+            background-color: green;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Formulário de cadastro */
         .form-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f9f9f9;
         }
 
         form {
@@ -89,10 +110,6 @@
             border-radius: 4px;
         }
 
-        .form-group input[type="date"] {
-            padding: 6px;
-        }
-
         .submit-btn {
             display: block;
             width: 100%;
@@ -109,6 +126,15 @@
         .submit-btn:hover {
             background-color: #0056b3;
         }
+
+        /* Rodapé fixo */
+        footer {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+        }
     </style>
 </head>
 
@@ -120,53 +146,59 @@
 
     <!-- Navegação -->
     <nav>
+        <a href="login.html" class="login-button">
+            <img id="imagem" src="imagens/login icone.png"> <!-- Ícone de Login -->
+        </a>
         <a href="layout.html">Início</a>
         <a href="produtos.html">Cadastro de Produtos</a>
         <a href="clientes.html">Cadastro de Clientes</a>
         <a href="vendas.html">Vendas</a>
         <a href="relatorios_selecao.html">Relatórios</a>
+        <a href="sobre.html">Sobre</a>
     </nav>
 
-    <!-- Formulário de Cadastro de Produtos -->
-    <div class="form-container">
-        <form id="produtoForm" onsubmit="salvarProduto(event)">
-            <h2>Cadastrar Produtos</h2>
+    <!-- Conteúdo principal com formulário -->
+    <div class="main-content">
+        <div class="form-container">
+            <form id="produtoForm" onsubmit="salvarProduto(event)">
+                <h2>Cadastrar Produtos</h2>
 
-            <div class="form-group">
-                <label for="categoria">Categoria:</label>
-                <input type="text" id="categoria" name="categoria" required>
-            </div>
+                <div class="form-group">
+                    <label for="categoria">Categoria:</label>
+                    <input type="text" id="categoria" name="categoria" required>
+                </div>
 
-            <div class="form-group">
-                <label for="data_plantio">Data de Plantio:</label>
-                <input type="date" id="data_plantio" name="data_plantio" required>
-            </div>
+                <div class="form-group">
+                    <label for="data_plantio">Data de Plantio:</label>
+                    <input type="date" id="data_plantio" name="data_plantio" required>
+                </div>
 
-            <div class="form-group">
-                <label for="nome_produto">Nome do Produto:</label>
-                <input type="text" id="nome_produto" name="nome_produto" required>
-            </div>
+                <div class="form-group">
+                    <label for="nome_produto">Nome do Produto:</label>
+                    <input type="text" id="nome_produto" name="nome_produto" required>
+                </div>
 
-            <div class="form-group">
-                <label for="quantidade_estoque">Quantidade em Estoque:</label>
-                <input type="number" id="quantidade_estoque" name="quantidade_estoque" required>
-            </div>
+                <div class="form-group">
+                    <label for="quantidade_estoque">Quantidade em Estoque:</label>
+                    <input type="number" id="quantidade_estoque" name="quantidade_estoque" required>
+                </div>
 
-            <div class="form-group">
-                <label for="preco">Preço:</label>
-                <input type="number" id="preco" name="preco" step="0.01" required>
-            </div>
+                <div class="form-group">
+                    <label for="preco">Preço:</label>
+                    <input type="number" id="preco" name="preco" step="0.01" required>
+                </div>
 
-            <div class="form-group">
-                <label for="disponivel">Disponível:</label>
-                <select id="disponivel" name="disponivel">
-                    <option value="sim">Sim</option>
-                    <option value="nao">Não</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="disponivel">Disponível:</label>
+                    <select id="disponivel" name="disponivel">
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                </div>
 
-            <button type="submit" class="submit-btn">Cadastrar</button>
-        </form>
+                <button type="submit" class="submit-btn">Cadastrar</button>
+            </form>
+        </div>
     </div>
 
     <!-- Rodapé -->

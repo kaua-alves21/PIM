@@ -179,3 +179,31 @@ footer {
     color: white;
 }
 
+
+nav a {
+    float: left; /* Alinhamento dos links à esquerda */
+    display: block; /* Faz o link ocupar toda a altura do elemento */
+    color: white; /* Cor do texto */
+    text-align: center; /* Alinhamento do texto */
+    padding: 14px 16px; /* Espaçamento interno */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+
+.login-button {
+    float: left; /* Alinhamento do botão de login à direita */
+}
+
+.login-button img {
+    vertical-align: middle; /* Alinha a imagem verticalmente */
+    width: 20px; /* Ajuste o tamanho da imagem */
+    height: 20px; /* Ajuste o tamanho da imagem */
+    margin-right: 5px; /* Espaçamento à direita da imagem */
+}
+
+#imagem{
+    border-radius: 50%;
+    background-color: white;
+    float: left;
+}
+

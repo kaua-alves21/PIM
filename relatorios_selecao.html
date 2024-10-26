@@ -61,26 +61,27 @@
             font-size: 18px;
             font-weight: bold;
         }
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #264653;
+    padding: 10px 0;
+}
 
-        nav {
-            margin-bottom: 30px;
-            text-align: center;
-        }
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #264653;
+    border-radius: 5px;
+}
 
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: white; /* Define a cor dos links como branca */
-            font-weight: bold;
-            padding: 10px 15px;
-           
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background-color: #0056b3; /* Muda a cor de fundo ao passar o mouse */
-        }
-
+nav a:hover {
+    background-color: #1d3557;
+}
         footer {
             text-align: center;
             margin-top: 30px;
@@ -97,18 +98,24 @@
 
     <!-- Navegação -->
     <nav>
+         <a href="login.html" class="login-button">
+            <img id = "imagem" src="imagens/login icone.png" > <!-- Ícone de Login -->
+           
+        </a>
         <a href="layout.html">Início</a>
         <a href="produtos.html">Cadastro de Produtos</a>
         <a href="clientes.html">Cadastro de Clientes</a>
         <a href="vendas.html">Vendas</a>
         <a href="relatorios_selecao.html">Relatórios</a>
+        <a href="sobre.html">Sobre</a>
+       
     </nav>
 
     <!-- Seleção de Relatórios -->
     <div class="container">
         <h2>Selecione o Tipo de Relatório</h2>
         <div class="relatorio-btns">
-            <a href="relatorios.html" class="relatorio-btn">
+            <a href="relatorios-produtos.html" class="relatorio-btn">
                 <img src="imagens/produtos.png" alt="Relatório de Produtos">
                 <span>Relatório de Produtos</span>
             </a>

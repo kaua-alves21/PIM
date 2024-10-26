@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Relatório de Vendas</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link para o seu CSS principal -->
+    <link rel="stylesheet" href="styles.css">
     <style>
         .relatorio-container {
             background-color: white;
@@ -32,7 +32,7 @@
         }
 
         table th {
-            background-color: #007bff; /* Cor do cabeçalho da tabela */
+            background-color: #007bff;
             color: white;
         }
 
@@ -41,6 +41,31 @@
             margin-top: 20px;
             font-size: 18px;
             font-weight: bold;
+        }
+
+        .filtro-container {
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 10px; /* Espaçamento entre os itens */
+        }
+
+        .filtro-container label, .filtro-container input {
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -55,12 +80,27 @@
 
     <!-- Navegação -->
     <nav>
+        <a href="login.html" class="login-button">
+            <img id = "imagem" src="imagens/login icone.png" > <!-- Ícone de Login -->
+            
+        </a>
         <a href="layout.html">Início</a>
         <a href="produtos.html">Cadastro de Produtos</a>
         <a href="clientes.html">Cadastro de Clientes</a>
         <a href="vendas.html">Vendas</a>
         <a href="relatorios_selecao.html">Relatórios</a>
+        <a href="sobre.html">Sobre</a>
+        
     </nav>
+
+    <!-- Filtro de Período -->
+    <div class="filtro-container">
+        <label for="dataInicio">Data de Início:</label>
+        <input type="date" id="dataInicio">
+        <label for="dataFim">Data de Fim:</label>
+        <input type="date" id="dataFim">
+        <button onclick="carregarRelatorio()">Filtrar</button>
+    </div>
 
     <!-- Conteúdo Dinâmico -->
     <div id="content">
@@ -94,23 +134,31 @@
         <p>&copy; 2024 Startup de Segurança Alimentar. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="load-content.js"></script>
     <script>
-        // Função para carregar os dados do localStorage e exibir no relatório
+        // Função para carregar os dados do localStorage e exibir no relatório com filtro de data
         function carregarRelatorio() {
             const vendas = JSON.parse(localStorage.getItem('vendas')) || [];
             const totalPorCliente = {};
             let totalGeral = 0;
 
-            vendas.forEach(venda => {
-                const { cliente, produto, quantidade, valor } = venda;
+            const dataInicio = document.getElementById('dataInicio').value;
+            const dataFim = document.getElementById('dataFim').value;
 
-                // Acumula o valor por cliente
-                if (!totalPorCliente[cliente]) {
-                    totalPorCliente[cliente] = { total: 0, produtos: [] };
+            vendas.forEach(venda => {
+                const { cliente, produto, quantidade, valor, dataVenda } = venda;
+                const dataVendaConvertida = new Date(dataVenda);
+
+                // Filtrar vendas com base nas datas fornecidas
+                if ((dataInicio === "" || new Date(dataInicio) <= dataVendaConvertida) &&
+                    (dataFim === "" || new Date(dataFim) >= dataVendaConvertida)) {
+                    
+                    // Acumula o valor por cliente
+                    if (!totalPorCliente[cliente]) {
+                        totalPorCliente[cliente] = { total: 0, produtos: [] };
+                    }
+                    totalPorCliente[cliente].total += valor;
+                    totalPorCliente[cliente].produtos.push({ produto, quantidade, valor });
                 }
-                totalPorCliente[cliente].total += valor;
-                totalPorCliente[cliente].produtos.push({ produto, quantidade, valor });
             });
 
             const tabela = document.getElementById('relatorioTabelaBody');

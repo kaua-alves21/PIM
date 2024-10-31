@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Relatório de Vendas</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <style>
         .relatorio-container {
             background-color: white;
@@ -15,7 +15,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 80%;
             max-width: 900px;
-            margin: 20px auto; /* Centraliza o container na página */
+            margin: 20px auto;
         }
 
         table {
@@ -24,8 +24,7 @@
             background-color: #f9f9f9;
         }
 
-        table th,
-        table td {
+        table th, table td {
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #ccc;
@@ -45,10 +44,10 @@
 
         .filtro-container {
             display: flex;
-            justify-content: center; /* Centraliza horizontalmente */
+            justify-content: center;
             align-items: center;
             margin-bottom: 20px;
-            gap: 10px; /* Espaçamento entre os itens */
+            gap: 10px;
         }
 
         .filtro-container label, .filtro-container input {
@@ -67,22 +66,32 @@
         button:hover {
             background-color: #0056b3;
         }
+        
+        .delete-button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .delete-button:hover {
+            background-color: #c82333;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Cabeçalho -->
     <header>
         <h1>Startup Segurança Alimentar</h1>
         <p>&nbsp;</p>
     </header>
 
-    <!-- Navegação -->
     <nav>
         <a href="login.html" class="login-button">
-            <img id = "imagem" src="imagens/login icone.png" > <!-- Ícone de Login -->
-            
+            <img id="imagem" src="css/imagens/login icone.png">
         </a>
         <a href="layout.html">Início</a>
         <a href="produtos.html">Cadastro de Produtos</a>
@@ -90,10 +99,8 @@
         <a href="vendas.html">Vendas</a>
         <a href="relatorios_selecao.html">Relatórios</a>
         <a href="sobre.html">Sobre</a>
-        
     </nav>
 
-    <!-- Filtro de Período -->
     <div class="filtro-container">
         <label for="dataInicio">Data de Início:</label>
         <input type="date" id="dataInicio">
@@ -102,12 +109,10 @@
         <button onclick="carregarRelatorio()">Filtrar</button>
     </div>
 
-    <!-- Conteúdo Dinâmico -->
     <div id="content">
         <div class="relatorio-container">
             <h1>Relatório de Vendas</h1>
 
-            <!-- Tabela de vendas -->
             <table>
                 <thead>
                     <tr>
@@ -115,6 +120,7 @@
                         <th>Produto</th>
                         <th>Quantidade</th>
                         <th>Valor</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody id="relatorioTabelaBody">
@@ -122,71 +128,70 @@
                 </tbody>
             </table>
 
-            <!-- Total -->
             <div class="total-container">
                 Valor total: <span id="valorTotal">0.00</span>
             </div>
         </div>
     </div>
 
-    <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 Startup de Segurança Alimentar. Todos os direitos reservados.</p>
     </footer>
 
     <script>
-        // Função para carregar os dados do localStorage e exibir no relatório com filtro de data
         function carregarRelatorio() {
             const vendas = JSON.parse(localStorage.getItem('vendas')) || [];
             const totalPorCliente = {};
             let totalGeral = 0;
 
-            const dataInicio = document.getElementById('dataInicio').value;
-            const dataFim = document.getElementById('dataFim').value;
+            // Pega as datas de início e fim dos inputs e converte para datas no formato ISO
+            const dataInicio = document.getElementById('dataInicio').value ? new Date(document.getElementById('dataInicio').value + 'T00:00:00') : null;
+            const dataFim = document.getElementById('dataFim').value ? new Date(document.getElementById('dataFim').value + 'T23:59:59') : null;
 
-            vendas.forEach(venda => {
+            vendas.forEach((venda, index) => {
                 const { cliente, produto, quantidade, valor, dataVenda } = venda;
                 const dataVendaConvertida = new Date(dataVenda);
 
-                // Filtrar vendas com base nas datas fornecidas
-                if ((dataInicio === "" || new Date(dataInicio) <= dataVendaConvertida) &&
-                    (dataFim === "" || new Date(dataFim) >= dataVendaConvertida)) {
+                // Verifica se a venda está dentro do intervalo de datas selecionado
+                if ((!dataInicio || dataVendaConvertida >= dataInicio) &&
+                    (!dataFim || dataVendaConvertida <= dataFim)) {
                     
-                    // Acumula o valor por cliente
                     if (!totalPorCliente[cliente]) {
                         totalPorCliente[cliente] = { total: 0, produtos: [] };
                     }
                     totalPorCliente[cliente].total += valor;
-                    totalPorCliente[cliente].produtos.push({ produto, quantidade, valor });
+                    totalPorCliente[cliente].produtos.push({ produto, quantidade, valor, index });
                 }
             });
 
             const tabela = document.getElementById('relatorioTabelaBody');
-            tabela.innerHTML = ''; // Limpar tabela antes de adicionar os novos dados
+            tabela.innerHTML = '';
 
-            // Adicionar as vendas à tabela
             for (const cliente in totalPorCliente) {
                 const vendasCliente = totalPorCliente[cliente];
                 vendasCliente.produtos.forEach(item => {
                     const novaLinha = document.createElement('tr');
-                    novaLinha.innerHTML = `<td>${cliente}</td><td>${item.produto}</td><td>${item.quantidade}</td><td>R$ ${item.valor.toFixed(2)}</td>`;
+                    novaLinha.innerHTML = `<td>${cliente}</td><td>${item.produto}</td><td>${item.quantidade}</td><td>R$ ${item.valor.toFixed(2)}</td><td><button class="delete-button" onclick="excluirVenda(${item.index})">Excluir</button></td>`;
                     tabela.appendChild(novaLinha);
                 });
 
-                // Adicionar linha com o total do cliente
                 const linhaTotal = document.createElement('tr');
-                linhaTotal.innerHTML = `<td><strong>Total de ${cliente}</strong></td><td></td><td></td><td><strong>R$ ${vendasCliente.total.toFixed(2)}</strong></td>`;
+                linhaTotal.innerHTML = `<td><strong>Total de ${cliente}</strong></td><td></td><td></td><td><strong>R$ ${vendasCliente.total.toFixed(2)}</strong></td><td></td>`;
                 tabela.appendChild(linhaTotal);
 
-                // Acumular total geral
                 totalGeral += vendasCliente.total;
             }
 
-            // Atualizar o valor total
             document.getElementById('valorTotal').innerText = totalGeral.toFixed(2);
         }
 
-        // Chamar a função para carregar o relatório ao carregar a página
+        function excluirVenda(index) {
+            const vendas = JSON.parse(localStorage.getItem('vendas')) || [];
+            vendas.splice(index, 1); // Remove a venda pelo índice
+            localStorage.setItem('vendas', JSON.stringify(vendas)); // Atualiza o localStorage
+            carregarRelatorio(); // Recarrega o relatório atualizado
+        }
+
         window.onload = carregarRelatorio;
     </script>
 

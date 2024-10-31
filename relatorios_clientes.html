@@ -6,12 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Relatório de Clientes</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f9f9f9;
             text-align: center;
+        }
+        nav {
+    display: flex;
+    justify-content: center;
+    background-color: #264653;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #264653;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #1d3557;
+}
+        footer {
+            text-align: center;
+            margin-top: 30px;
         }
 
         header {
@@ -217,7 +241,7 @@
     <!-- Navegação -->
     <nav>
         <a href="login.html" class="login-button">
-            <img id="imagem" src="imagens/login icone.png"> <!-- Ícone de Login -->
+            <img id="imagem" src="css/imagens/login icone.png"> <!-- Ícone de Login -->
         </a>
         <a href="layout.html">Início</a>
         <a href="produtos.html">Cadastro de Produtos</a>

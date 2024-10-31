@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "clientes.html": "content-clientes.html",
         "vendas.html": "content-vendas.html",
         "relatorios.html": "content-relatorios.html",
-        "configuracoes.html": "content-configuracoes.html",
         "layout.html": "content-home.html",
+        "relatorio_selecao.html" : "content-relatorios_selecao.html"
     };
 
     // Identifica o arquivo de conteúdo a ser carregado

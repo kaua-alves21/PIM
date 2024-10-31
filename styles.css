@@ -9,44 +9,71 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Cabeçalho */
 header {
     background-color: green;
     color: white;
-    padding: 15px;
+    padding: 8px;
     text-align: center;
+    width: 100%;
 }
+
+h1 {
+    text-align: center;
+    margin-top: 12px;
+}
+
 
 /* Navegação */
 nav {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     background-color: #264653;
-    padding: 10px 0;
+    padding: 10px;
+    width: 100%;
+    
 }
 
 nav a {
     color: white;
-    padding: 14px 20px;
+    padding: 10px 15px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
-    background-color: #264653;
     border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
 }
 
 nav a:hover {
     background-color: #1d3557;
 }
 
+.login-button img {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+#imagem {
+    border-radius: 50%;
+    background-color: white;
+    float: left;
+}
+
 /* Container */
 .container {
     max-width: 1200px;
-    margin: auto;
     padding: 20px;
+    width: 100%;
 }
 
 .welcome {
@@ -88,8 +115,40 @@ ul li button:hover {
 
 /* Responsividade */
 @media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    
+    nav a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
     .dashboard {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .shortcut-buttons .button {
+        width: 45%;
+    }
+
+    .add-item input {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .button span {
+        font-size: 14px;
     }
 }
 
@@ -125,9 +184,7 @@ ul li button:hover {
     background-color: #21867a;
 }
 
-/* Rodapé */
-/* Rodapé fixo no final da página */
-/* Centralizando a seção de botões */
+/* Botões de Atalho */
 .shortcut-buttons {
     display: flex;
     justify-content: center;
@@ -148,14 +205,14 @@ ul li button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 180px; /* Tamanho fixo para os botões */
+    width: 180px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .shortcut-buttons .button img {
-    width: 50px; /* Tamanho das imagens */
+    width: 50px;
     height: 50px;
-    margin-bottom: 10px; /* Espaço entre a imagem e o texto */
+    margin-bottom: 10px;
 }
 
 .shortcut-buttons .button span {
@@ -167,7 +224,7 @@ ul li button:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Garantindo que o rodapé permaneça fixo no final da página */
+/* Rodapé */
 footer {
     position: fixed;
     left: 0;
@@ -179,31 +236,6 @@ footer {
     color: white;
 }
 
-
-nav a {
-    float: left; /* Alinhamento dos links à esquerda */
-    display: block; /* Faz o link ocupar toda a altura do elemento */
-    color: white; /* Cor do texto */
-    text-align: center; /* Alinhamento do texto */
-    padding: 14px 16px; /* Espaçamento interno */
-    text-decoration: none; /* Remove o sublinhado */
+#botao{
+    margin-top: 80px
 }
-
-
-.login-button {
-    float: left; /* Alinhamento do botão de login à direita */
-}
-
-.login-button img {
-    vertical-align: middle; /* Alinha a imagem verticalmente */
-    width: 20px; /* Ajuste o tamanho da imagem */
-    height: 20px; /* Ajuste o tamanho da imagem */
-    margin-right: 5px; /* Espaçamento à direita da imagem */
-}
-
-#imagem{
-    border-radius: 50%;
-    background-color: white;
-    float: left;
-}
-

@@ -21,48 +21,49 @@ create table usuario(
 );
 
 -- Tabela de Clientes
-CREATE TABLE Clientes (
-    ID INT NOT NULL AUTO_INCREMENT,
-    Nome VARCHAR(50) NOT NULL,
-    Email VARCHAR(100) UNIQUE NOT NULL,
-    Telefone VARCHAR(20),
-    Endereco VARCHAR(200),
-    PRIMARY KEY (ID)
+CREATE TABLE tb_cliente (
+    cd_cliente INT NOT NULL AUTO_INCREMENT,
+    nm_cliente VARCHAR(50),
+    nm_email VARCHAR(100),
+    cd_telefone VARCHAR(20),
+    ds_endereco VARCHAR(200),
+    constraint pk_cliente primary key(cd_cliente)
 );
 
 -- Tabela de Produtos
-CREATE TABLE Produtos (
-    ID INT NOT NULL AUTO_INCREMENT,
-    Nome VARCHAR(100) NOT NULL,
-    Categoria VARCHAR(50),
-    DataPlantio DATE,
-    DataColheita DATE,
-    Quantidade INT,
-    PrecoUnitario DECIMAL(10,2),
-    PRIMARY KEY (ID)
+CREATE TABLE tb_produto (
+    cd_produto INT NOT NULL AUTO_INCREMENT,
+    nm_produto VARCHAR(100),
+    nm_categoria VARCHAR(50),
+    dt_plantio DATE,
+    dt_colheita DATE,
+    qt_unidade INT,
+    vl_unidade float,
+    constraint pk_produto primary key(cd_produto)
 );
 
 -- Tabela de Vendas
-CREATE TABLE Vendas (
-    ID INT NOT NULL AUTO_INCREMENT,
-    ClienteID INT,
-    DataVenda DATETIME,
-    ValorTotal DECIMAL(10,2),
-    PRIMARY KEY (ID),
-    FOREIGN KEY (ClienteID) REFERENCES Clientes(ID)
+CREATE TABLE tb_venda (
+    cd_venda INT NOT NULL AUTO_INCREMENT,
+    dt_venda DATE,
+    hr_venda time,
+    vl_total float,
+    cd_cliente int,
+    constraint pk_venda primary key(cd_venda),
+    constraint fk_venda_cliente foreign key (cd_cliente) references tb_cliente(cd_cliente)
 );
 
 -- Tabela de ItensVenda (para registrar os produtos vendidos em cada venda)
-CREATE TABLE ItensVenda (
-    ID INT NOT NULL AUTO_INCREMENT,
-    VendaID INT,
-    ProdutoID INT,
-    Quantidade INT,
-    ValorUnitario DECIMAL(10,2),
-    ValorTotal DECIMAL(10,2),
-    PRIMARY KEY (ID),
-    FOREIGN KEY (VendaID) REFERENCES Vendas(ID),
-    FOREIGN KEY (ProdutoID) REFERENCES Produtos(ID)
+CREATE TABLE tb_item_venda (
+    cd_item INT NOT NULL AUTO_INCREMENT,
+    qt_item INT,
+    vl_unitario float,
+    vl_total float,
+    cd_produto int,
+    cd_venda int,
+    constraint pk_item primary key(cd_item),
+    constraint fk_item_produto foreign key (cd_produto) references tb_produto(cd_produto),
+    constraint fk_item_venda foreign key (cd_venda) references tb_venda(cd_venda)
 );
 
 show tables;
@@ -79,33 +80,33 @@ INSERT INTO usuario (nm_usuario, nm_login, nm_email, ds_senha, cd_tipo_usuario) 
 
 select * from usuario;
 
-INSERT INTO Clientes (Nome, Email, Telefone, Endereco) VALUES
+INSERT INTO tb_cliente (nm_cliente, nm_email, cd_telefone, ds_endereco) VALUES
 ('Alice', 'alice@example.com', '123456789', '123 Main St, Cityville'),
 ('Bob', 'bob@example.com', '987654321', '456 Oak St, Townsville'),
 ('Charlie', 'charlie@example.com', '555123456', '789 Pine St, Villagetown');
 
-select * from Clientes;
+select * from tb_cliente;
 
-INSERT INTO Produtos (Nome, Categoria, DataPlantio, DataColheita, Quantidade, PrecoUnitario) VALUES
+INSERT INTO tb_produto (nm_produto, nm_categoria, dt_plantio, dt_colheita, qt_unidade, vl_unidade) VALUES
 ('Tomate', 'Vegetal', '2024-01-01', '2024-03-01', 100, 1.50),
 ('Alface', 'Vegetal', '2024-01-15', '2024-02-28', 200, 0.75),
 ('Cenoura', 'Vegetal', '2024-02-01', '2024-05-01', 150, 1.00);
 
-select * from Produtos;
+select * from tb_produto;
 
-INSERT INTO Vendas (ClienteID, DataVenda, ValorTotal) VALUES
-(1, '2024-05-01 10:00:00', 150.00),
-(2, '2024-05-02 14:30:00', 75.00),
-(3, '2024-05-03 09:15:00', 50.00);
+INSERT INTO tb_venda (dt_venda, hr_venda, vl_total, cd_cliente) VALUES
+('2024-05-01', '10:00:00', 150.00, 1),
+('2024-05-02', '14:30:00', 75.00, 2),
+('2024-05-03', '09:15:00', 50.00, 3);
 
-select * from Vendas;
+select * from tb_venda;
 
-INSERT INTO ItensVenda (VendaID, ProdutoID, Quantidade, ValorUnitario, ValorTotal) VALUES
-(1, 1, 50, 1.50, 75.00),
-(1, 2, 100, 0.75, 75.00),
-(2, 3, 50, 1.00, 50.00),
-(2, 1, 20, 1.50, 30.00),
-(3, 2, 50, 0.75, 37.50),
-(3, 3, 12, 1.00, 12.00);
+INSERT INTO tb_item_venda (qt_item, vl_unitario, vl_total, cd_produto, cd_venda) VALUES
+(50, 1.50, 75.00, 1, 1),
+(100, 0.75, 75.00, 1, 2),
+(50, 1.00, 50.00, 2, 3),
+(20, 1.50, 30.00, 2, 1),
+(50, 0.75, 37.50, 3, 2),
+(12, 1.00, 12.00, 3, 3);
 
-select * from ItensVenda;
+select * from tb_item_venda;

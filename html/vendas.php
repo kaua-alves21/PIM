@@ -148,23 +148,23 @@
 
 <body>
 
-    <!-- Cabeçalho e Navegação principal do layout.html -->
+    <!-- Cabeçalho e Navegação principal do layout.php -->
     <header>
         <h1>Startup Segurança Alimentar</h1>
     </header>
 
     <!-- Navegação -->
     <nav>
-        <a href="login.html" class="login-button">
-            <img id = "imagem" src="../img/login icone.png" > <!-- Ícone de Login -->
+        <a href="login.php" class="login-button">
+            <img id = "imagem" src="../img/login.png" > <!-- Ícone de Login -->
            
         </a>
-        <a href="layout.html">Início</a>
-        <a href="produtos.html">Cadastro de Produtos</a>
-        <a href="clientes.html">Cadastro de Clientes</a>
-        <a href="vendas.html">Vendas</a>
-        <a href="relatorios_selecao.html">Relatórios</a>
-        <a href="sobre.html">Sobre</a>
+        <a href="layout.php">Início</a>
+        <a href="produtos.php">Cadastro de Produtos</a>
+        <a href="clientes.php">Cadastro de Clientes</a>
+        <a href="vendas.php">Vendas</a>
+        <a href="relatorios_selecao.php">Relatórios</a>
+        <a href="sobre.php">Sobre</a>
        
     </nav>
 
@@ -228,7 +228,7 @@
         </div>
     </div>
 
-    <!-- Rodapé principal do layout.html -->
+    <!-- Rodapé principal do layout.php -->
     <footer>
         <p>&copy; 2024 Startup de Segurança Alimentar. Todos os direitos reservados.</p>
     </footer>
@@ -326,7 +326,7 @@
 
             // Redirecionar para a página de relatórios após 2 segundos
             setTimeout(() => {
-                window.location.href = "vendas.html"; // Atualize o nome do arquivo conforme necessário
+                window.location.href = "vendas.php"; // Atualize o nome do arquivo conforme necessário
             }, 2000);
         }
 

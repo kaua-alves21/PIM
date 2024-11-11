@@ -30,27 +30,27 @@
     <!-- Conteúdo Principal -->
     <div class="container">
         <div class="shortcut-buttons">
-            <a href="produtos.html" class="button">
+            <a href="produtos.php" class="button">
                 <img src="../img/produtos.png" >
                 <span>Cadastro de produtos</span>
             </a>
-            <a href="clientes.html" class="button">
+            <a href="clientes.php" class="button">
                 <img src="../img/clientes.png" >
                 <span>Cadastros de clientes</span>
             </a>
-            <a href="vendas.html" class="button">
+            <a href="vendas.php" class="button">
                 <img src="../img/vendas.png" >
                 <span>Vendas</span>
             </a>
-            <a href="relatorios.html" class="button">
+            <a href="relatorios.php" class="button">
                 <img src="../img/relatorios.png" >
                 <span>Relatórios</span>
             </a>
-            <a href="configuracoes.html" class="button">
+            <a href="configuracoes.php" class="button">
                 <img src="../img/configuracoes.png" >
                 <span>Configurações</span>
             </a>
-            <a href="sobre.html" class="button">
+            <a href="sobre.php" class="button">
                 <img src="../img/sobre.png" >
                 <span>Sobre</span>
             </a>

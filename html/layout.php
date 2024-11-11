@@ -1,4 +1,4 @@
-<!-- layout.html -->
+<!-- layout.php -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,38 +20,38 @@
 
     <!-- Navegação -->
     <nav>
-        <a href="login.html" class="login-button">
-            <img id = "imagem" src="../img/login icone.png" > <!-- Ícone de Login -->
+        <a href="login.php" class="login-button">
+            <img id = "imagem" src="../img/login.png" > <!-- Ícone de Login -->
            
         </a>
-        <a href="layout.html">Início</a>
-        <a href="produtos.html">Cadastro de Produtos</a>
-        <a href="clientes.html">Cadastro de Clientes</a>
-        <a href="vendas.html">Vendas</a>
-        <a href="relatorios_selecao.html">Relatórios</a>    
-        <a href="sobre.html">Sobre</a>
+        <a href="layout.php">Início</a>
+        <a href="produtos.php">Cadastro de Produtos</a>
+        <a href="clientes.php">Cadastro de Clientes</a>
+        <a href="vendas.php">Vendas</a>
+        <a href="relatorios_selecao.php">Relatórios</a>    
+        <a href="sobre.php">Sobre</a>
         
     </nav>
     <div class="container">
         <div id="botao" class="shortcut-buttons">
-            <a href="produtos.html" class="button">
+            <a href="produtos.php" class="button">
                 <img src="../img/produtos.png" >
                 <span>Cadastro de produtos</span>
             </a>
-            <a href="clientes.html" class="button">
+            <a href="clientes.php" class="button">
                 <img src="../img/clientes.png" >
                 <span>Cadastros de clientes</span>
             </a>
-            <a href="vendas.html" class="button">
+            <a href="vendas.php" class="button">
                 <img src="../img/vendas.png" >
                 <span>Vendas</span>
             </a>
-            <a href="relatorios_selecao.html" class="button">
-                <img src="../img/relatorio.png" >
+            <a href="relatorios_selecao.php" class="button">
+                <img src="../img/relatorios.png" >
                 <span>Relatórios</span>
             </a>
            
-            <a href="sobre.html" class="button">
+            <a href="sobre.php" class="button">
                 <img src="../img/sobre.png" >
                 <span>Sobre</span>
             </a>

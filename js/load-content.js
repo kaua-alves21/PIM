@@ -7,16 +7,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Define um mapeamento de cada página e o arquivo de conteúdo correspondente
     const contentMap = {
-        "produtos.html": "content-produtos.html",
-        "clientes.html": "content-clientes.html",
-        "vendas.html": "content-vendas.html",
-        "relatorios.html": "content-relatorios.html",
-        "layout.html": "content-home.html",
-        "relatorio_selecao.html" : "content-relatorios_selecao.html"
+        "produtos.php": "content-produtos.php",
+        "clientes.php": "content-clientes.php",
+        "vendas.php": "content-vendas.php",
+        "relatorios.php": "content-relatorios.php",
+        "layout.php": "content-home.php",
+        "relatorio_selecao.php" : "content-relatorios_selecao.php"
     };
 
     // Identifica o arquivo de conteúdo a ser carregado
-    const contentFile = contentMap[page] || "content-home.html"; // Carrega 'content-home.html' como padrão
+    const contentFile = contentMap[page] || "content-home.php"; // Carrega 'content-home.php' como padrão
 
     // Carrega o conteúdo dinamicamente
     fetch(contentFile)

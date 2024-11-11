@@ -12,7 +12,7 @@ if (isset($_SESSION["logado"])) {
 ?>
 
 
-<!-- login.html -->
+<!-- login.php -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -31,15 +31,15 @@ if (isset($_SESSION["logado"])) {
 
     <!-- Navegação -->
     <nav>
-        <a href="login.html" class="login-button">
-            <img id="imagem" src="../img/login icone.png" alt="Ícone de Login"> <!-- Ícone de Login -->
+        <a href="login.php" class="login-button">
+            <img id="imagem" src="../img/login.png" alt="Ícone de Login"> <!-- Ícone de Login -->
         </a>
-        <a href="layout.html">Início</a>
-        <a href="produtos.html">Cadastro de Produtos</a>
-        <a href="clientes.html">Cadastro de Clientes</a>
-        <a href="vendas.html">Vendas</a>
-        <a href="relatorios_selecao.html">Relatórios</a>    
-        <a href="sobre.html">Sobre</a>
+        <a href="layout.php">Início</a>
+        <a href="produtos.php">Cadastro de Produtos</a>
+        <a href="clientes.php">Cadastro de Clientes</a>
+        <a href="vendas.php">Vendas</a>
+        <a href="relatorios_selecao.php">Relatórios</a>    
+        <a href="sobre.php">Sobre</a>
     </nav>
 
     <div class="login-container">
@@ -49,7 +49,7 @@ if (isset($_SESSION["logado"])) {
                 <input type="text" name="login" value="<?=$login?>" id="login" placeholder="Nome de Usuário" required autofocus>
                 
                 <label for="password">Senha:</label>
-                <input type="password" name="senha" value="<?=$senha?>" id="login" placeholder="Senha" required>
+                <input type="password" name="senha" value="<?=$senha?>" id="senha" placeholder="Senha" required>
                 
                 <input type="submit" value="Entrar" id='botao'>
                 <div class="remember-forgot">

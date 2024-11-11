@@ -98,16 +98,16 @@ nav a:hover {
 
     <!-- Navegação -->
     <nav>
-         <a href="login.html" class="login-button">
-            <img id = "imagem" src="../img/login icone.png" > <!-- Ícone de Login -->
+         <a href="login.php" class="login-button">
+            <img id = "imagem" src="../img/login.png" > <!-- Ícone de Login -->
            
         </a>
-        <a href="layout.html">Início</a>
-        <a href="produtos.html">Cadastro de Produtos</a>
-        <a href="clientes.html">Cadastro de Clientes</a>
-        <a href="vendas.html">Vendas</a>
-        <a href="relatorios_selecao.html">Relatórios</a>
-        <a href="sobre.html">Sobre</a>
+        <a href="layout.php">Início</a>
+        <a href="produtos.php">Cadastro de Produtos</a>
+        <a href="clientes.php">Cadastro de Clientes</a>
+        <a href="vendas.php">Vendas</a>
+        <a href="relatorios_selecao.php">Relatórios</a>
+        <a href="sobre.php">Sobre</a>
        
     </nav>
 
@@ -115,15 +115,15 @@ nav a:hover {
     <div class="container">
         <h2>Selecione o Tipo de Relatório</h2>
         <div class="relatorio-btns">
-            <a href="relatorios-produtos.html" class="relatorio-btn">
+            <a href="relatorios-produtos.php" class="relatorio-btn">
                 <img src="../img/produtos.png" alt="Relatório de Produtos">
                 <span>Relatório de Produtos</span>
             </a>
-            <a href="relatorios_clientes.html" class="relatorio-btn">
+            <a href="relatorios_clientes.php" class="relatorio-btn">
                 <img src="../img/clientes.png" alt="Relatório de Clientes">
                 <span>Relatório de Clientes</span>
             </a>
-            <a href="relatorios_vendas.html" class="relatorio-btn">
+            <a href="relatorios_vendas.php" class="relatorio-btn">
                 <img src="../img/vendas.png" alt="Relatório de Vendas">
                 <span>Relatório de Vendas</span>
             </a>

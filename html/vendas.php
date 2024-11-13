@@ -7,164 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Registro de Vendas</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-        }
-
-        h1 {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-       
-
-        .venda-container {
-            margin: 20px auto;
-            width: 80%;
-            max-width: 900px;
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .venda-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-
-        .venda-header div {
-            flex: 1;
-            margin-right: 10px;
-        }
-
-        .venda-header div:last-child {
-            margin-right: 0;
-        }
-
-        .venda-header label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .venda-header select,
-        .venda-header input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .venda-table-container {
-            background-color: #e0e0e0;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #f9f9f9;
-        }
-
-        table th,
-        table td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ccc;
-        }
-
-        table th {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .total-container {
-            text-align: right;
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .venda-actions {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .venda-actions button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            background-color: #007bff;
-            color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .venda-actions button:hover {
-            background-color: #0056b3;
-        }
-
-        .venda-actions .cancelar-btn {
-            background-color: #6c757d;
-        }
-
-        .venda-actions .apagar-btn {
-            background-color: #dc3545;
-        }
-
-        .venda-actions .cancelar-btn:hover {
-            background-color: #5a6268;
-        }
-
-        .venda-actions .apagar-btn:hover {
-            background-color: #c82333;
-        }
-
-        /* Estilo para a mensagem de sucesso */
-        .mensagem-sucesso {
-            color: green;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 20px;
-        }
-        
-        header {
-            background-color: green;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/vendas.css">
+    
 </head>
 
 <body>
 
-    <!-- Cabeçalho e Navegação principal do layout.php -->
+    <!-- Cabeçalho e Navegação principal do layout.html -->
     <header>
         <h1>Startup Segurança Alimentar</h1>
     </header>
 
     <!-- Navegação -->
     <nav>
-        <a href="login.php" class="login-button">
-            <img id = "imagem" src="../img/login.png" > <!-- Ícone de Login -->
+        <a href="login.html" class="login-button">
+            <img id = "imagem" src="../img/login icone.png" > <!-- Ícone de Login -->
            
         </a>
-        <a href="layout.php">Início</a>
-        <a href="produtos.php">Cadastro de Produtos</a>
-        <a href="clientes.php">Cadastro de Clientes</a>
-        <a href="vendas.php">Vendas</a>
-        <a href="relatorios_selecao.php">Relatórios</a>
-        <a href="sobre.php">Sobre</a>
+        <a href="layout.html">Início</a>
+        <a href="produtos.html">Cadastro de Produtos</a>
+        <a href="clientes.html">Cadastro de Clientes</a>
+        <a href="vendas.html">Vendas</a>
+        <a href="relatorios_selecao.html">Relatórios</a>
+        <a href="sobre.html">Sobre</a>
        
     </nav>
 
@@ -228,7 +93,7 @@
         </div>
     </div>
 
-    <!-- Rodapé principal do layout.php -->
+    <!-- Rodapé principal do layout.html -->
     <footer>
         <p>&copy; 2024 Startup de Segurança Alimentar. Todos os direitos reservados.</p>
     </footer>
@@ -326,7 +191,7 @@
 
             // Redirecionar para a página de relatórios após 2 segundos
             setTimeout(() => {
-                window.location.href = "vendas.php"; // Atualize o nome do arquivo conforme necessário
+                window.location.href = "vendas.html"; // Atualize o nome do arquivo conforme necessário
             }, 2000);
         }
 

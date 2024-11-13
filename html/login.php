@@ -54,7 +54,7 @@ if (isset($_SESSION["logado"])) {
                 <input type="submit" value="Entrar" id='botao'>
                 <div class="remember-forgot">
                     <div class="checkbox">
-                        <label><input type="checkbox" name="lembrar" value="SIM"<?=$checked?>>Lembrar-me</label>
+                        <label><input type="checkbox" name="lembrar" value="SIM"<?=$checked?>  Lembrar-me</label>
                     </div>
                     <div class="col-md-6 forgot-pass-content">
                             <a href="javascription:void(0)" class="forgot-pass">Esqueceu a senha?</a>
@@ -172,6 +172,29 @@ if (isset($_SESSION["logado"])) {
             text-align: center; /* Centralizar o texto do rodapé */
             margin-top: 20px; /* Espaço acima do rodapé */
         }
+      #botao{
+        background-color:green;
+         margin-left: 40%;
+        padding:10px
+      }
+      
+      /* Botão de login */
+#botao {
+    width: 100%; /* Largura total, igual ao botão de cadastro */
+    padding: 10px; /* Espaçamento interno */
+    background-color: #28a745; /* Cor de fundo verde */
+    color: white; /* Cor do texto */
+    border: none; /* Remover bordas */
+    border-radius: 4px; /* Bordas arredondadas */
+    cursor: pointer; /* Mudar o cursor ao passar o mouse */
+    margin-left: 0; /* Remover o deslocamento à esquerda */
+}
+
+#botao:hover {
+    background-color: #218838; /* Escurecer a cor ao passar o mouse */
+}
+
+      
     </style>
 </body>
 </html>

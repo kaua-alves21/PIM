@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastro</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
 </head>
 <body>
 
@@ -19,7 +20,7 @@
     <!-- Navegação -->
     <nav>
         <a href="login.php" class="login-button">
-            <img id="imagem" src="../img/login.png" alt="Ícone de Login"> <!-- Ícone de Login -->
+            <img id="imagem" src="../img/login icone.png" alt="Ícone de Login"> <!-- Ícone de Login -->
         </a>
         <a href="layout.php">Início</a>
         <a href="produtos.php">Cadastro de Produtos</a>
@@ -61,67 +62,4 @@
     <footer>
         <p>&copy; 2024 Startup de Segurança Alimentar. Todos os direitos reservados.</p>
     </footer>
-
-    <style>
-        /* Estilos específicos para o cadastro */
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding-top: 50px;
-        }
-
-        h2 {
-            text-align: center;
-            color: #264653;
-        }
-
-        .login-container {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-        }
-
-        .login-form label {
-            margin-top: 10px;
-            display: block;
-            color: #264653;
-        }
-
-        .login-form input[type="text"],
-        .login-form input[type="email"],
-        .login-form input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-bottom: 15px;
-        }
-
-        .login-form input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .login-form input[type="submit"]:hover {
-            background-color: #218838;
-        }
-
-        .login-form p {
-            text-align: center;
-            margin-top: 15px;
-        }
-        
-        .login-form a {
-            color: #264653;
-            text-decoration: none;
-        }
-    </style>
-</body>
 </html>

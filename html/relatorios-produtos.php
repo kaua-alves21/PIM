@@ -7,105 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Relatórios</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            text-align: center;
-        }
-
-        h2 {
-            margin: 20px 0;
-        }
-
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
-            width: 80%;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .filtro-container {
-            margin: 20px 0;
-        }
-
-        .filtro-container label,
-        .filtro-container input {
-            margin-right: 10px;
-        }
-
-        button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            border-radius: 4px;
-            margin-right: 5px; /* Espaçamento entre os botões */
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        .editar-button {
-            background-color: #28a745;
-        }
-
-        .editar-button:hover {
-            background-color: #218838;
-        }
-
-        .excluir-button {
-            background-color: #dc3545;
-            color: white;
-        }
-
-        .excluir-button:hover {
-            background-color: #c82333;
-        }
-
-        #form-edicao {
-            display: none;
-            margin: 20px auto;
-            text-align: left;
-            width: 400px; /* Aumentado para melhor visualização */
-            border: 1px solid #ccc;
-            padding: 15px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px; /* Bordas arredondadas */
-        }
-
-        #form-edicao label {
-            display: block;
-            margin-top: 10px;
-            font-weight: bold; /* Negrito para os rótulos */
-        }
-
-        #form-edicao input,
-        #form-edicao select {
-            width: calc(100% - 20px); /* Ajuste de largura para os campos */
-            padding: 10px;
-            margin-top: 5px; /* Espaçamento superior dos campos */
-            border: 1px solid #ccc;
-            border-radius: 4px; /* Bordas arredondadas */
-        }
-
-        #form-edicao button {
-            margin-top: 15px; /* Espaçamento superior dos botões */
-        }
-    </style>
+    <link rel="stylesheet" href="../css/relatorio-produtos.css">
+ 
     <script>
         let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
         let produtoEditandoIndex = null;
@@ -208,15 +111,15 @@
     </header>
 
     <nav>
-        <a href="login.php" class="login-button">
-            <img id="imagem" src="../img/login.png">
+        <a href="login.html" class="login-button">
+            <img id="imagem" src="../img/login icone.png">
         </a>
-        <a href="layout.php">Início</a>
-        <a href="produtos.php">Cadastro de Produtos</a>
-        <a href="clientes.php">Cadastro de Clientes</a>
-        <a href="vendas.php">Vendas</a>
-        <a href="relatorios_selecao.php">Relatórios</a>
-        <a href="sobre.php">Sobre</a>
+        <a href="layout.html">Início</a>
+        <a href="produtos.html">Cadastro de Produtos</a>
+        <a href="clientes.html">Cadastro de Clientes</a>
+        <a href="vendas.html">Vendas</a>
+        <a href="relatorios_selecao.html">Relatórios</a>
+        <a href="sobre.html">Sobre</a>
     </nav>
 
     <div class="filtro-container">

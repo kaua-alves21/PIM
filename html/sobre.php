@@ -7,42 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Sobre - Startup Segurança Alimentar</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        .content {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: left;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #007bff;
-            margin-bottom: 20px;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        .external-links a {
-            color: #007bff;
-            text-decoration: none;
-        }
-
-        .external-links a:hover {
-            text-decoration: underline;
-        }
-
-        footer{
-            position: relative;
-        }
-        h2{
-            color:black;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -54,16 +19,16 @@
 
     <!-- Navegação -->
     <nav>
-        <a href="login.php" class="login-button">
-            <img id = "imagem" src="../img/login.png" > <!-- Ícone de Login -->
+        <a href="login.html" class="login-button">
+            <img id = "imagem" src="../img/login icone.png" > <!-- Ícone de Login -->
             
         </a>
-        <a href="layout.php">Início</a>
-        <a href="produtos.php">Cadastro de Produtos</a>
-        <a href="clientes.php">Cadastro de Clientes</a>
-        <a href="vendas.php">Vendas</a>
-        <a href="relatorios_selecao.php">Relatórios</a>
-        <a href="sobre.php">Sobre</a>
+        <a href="layout.html">Início</a>
+        <a href="produtos.html">Cadastro de Produtos</a>
+        <a href="clientes.html">Cadastro de Clientes</a>
+        <a href="vendas.html">Vendas</a>
+        <a href="relatorios_selecao.html">Relatórios</a>
+        <a href="sobre.html">Sobre</a>
         
     </nav>
 <br>

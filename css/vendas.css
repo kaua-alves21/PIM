@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+
+.venda-container {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.venda-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.venda-header div {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.venda-header div:last-child {
+    margin-right: 0;
+}
+
+.venda-header label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.venda-header select,
+.venda-header input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.venda-table-container {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.total-container {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.venda-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.venda-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.venda-actions button:hover {
+    background-color: #0056b3;
+}
+
+.venda-actions .cancelar-btn {
+    background-color: #6c757d;
+}
+
+.venda-actions .apagar-btn {
+    background-color: #dc3545;
+}
+
+.venda-actions .cancelar-btn:hover {
+    background-color: #5a6268;
+}
+
+.venda-actions .apagar-btn:hover {
+    background-color: #c82333;
+}
+
+/* Estilo para a mensagem de sucesso */
+.mensagem-sucesso {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+header {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}

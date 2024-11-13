@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Cadastro de Produtos</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/produtos.css">
     <script>
         // Função para salvar o produto no LocalStorage
         function salvarProduto(event) {
@@ -37,119 +38,7 @@
             alert("Produto cadastrado com sucesso!");
         }
     </script>
-    <style>
-        /* Estilos de layout */
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Define o conteúdo principal para ocupar o espaço disponível */
-        .main-content {
-            flex: 1;
-            padding: 20px;
-        }
-
-        header {
-            background-color: green;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-
-        nav {
-    display: flex;
-    justify-content: center;
-    background-color: #264653;
-    padding: 10px 0;
-}
-
-nav a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    background-color: #264653;
-    border-radius: 5px;
-}
-
-nav a:hover {
-    background-color: #1d3557;
-}
-        footer {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        /* Formulário de cadastro */
-        .form-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        form {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            width: 600px;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        .form-group {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            flex-basis: 30%;
-        }
-
-        .form-group input,
-        .form-group select {
-            flex-basis: 65%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .submit-btn {
-            display: block;
-            width: 100%;
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .submit-btn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Rodapé fixo */
-        footer {
-            background-color: green;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-        }
-    </style>
+   
 </head>
 
 <body>
@@ -160,15 +49,15 @@ nav a:hover {
 
     <!-- Navegação -->
     <nav>
-        <a href="login.php" class="login-button">
-            <img id="imagem" src="../img/login.png"> <!-- Ícone de Login -->
+        <a href="login.html" class="login-button">
+            <img id="imagem" src="../img/login icone.png"> <!-- Ícone de Login -->
         </a>
-        <a href="layout.php">Início</a>
-        <a href="produtos.php">Cadastro de Produtos</a>
-        <a href="clientes.php">Cadastro de Clientes</a>
-        <a href="vendas.php">Vendas</a>
-        <a href="relatorios_selecao.php">Relatórios</a>
-        <a href="sobre.php">Sobre</a>
+        <a href="layout.html">Início</a>
+        <a href="produtos.html">Cadastro de Produtos</a>
+        <a href="clientes.html">Cadastro de Clientes</a>
+        <a href="vendas.html">Vendas</a>
+        <a href="relatorios_selecao.html">Relatórios</a>
+        <a href="sobre.html">Sobre</a>
     </nav>
 
     <!-- Conteúdo principal com formulário -->

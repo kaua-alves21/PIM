@@ -7,78 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Relatório de Vendas</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/relatorio-vendas.css">
     <style>
-        .relatorio-container {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 900px;
-            margin: 20px auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #f9f9f9;
-        }
-
-        table th, table td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ccc;
-        }
-
-        table th {
-            background-color: #007bff;
-            color: white;
-        }
-
-        .total-container {
-            text-align: right;
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .filtro-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            gap: 10px;
-        }
-
-        .filtro-container label, .filtro-container input {
-            margin-right: 10px;
-        }
-
-        button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-        
-        .delete-button {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .delete-button:hover {
-            background-color: #c82333;
-        }
+     
     </style>
 </head>
 
@@ -90,15 +21,15 @@
     </header>
 
     <nav>
-        <a href="login.php" class="login-button">
-            <img id="imagem" src="../img/login.png">
+        <a href="login.html" class="login-button">
+            <img id="imagem" src="../img/login icone.png">
         </a>
-        <a href="layout.php">Início</a>
-        <a href="produtos.php">Cadastro de Produtos</a>
-        <a href="clientes.php">Cadastro de Clientes</a>
-        <a href="vendas.php">Vendas</a>
-        <a href="relatorios_selecao.php">Relatórios</a>
-        <a href="sobre.php">Sobre</a>
+        <a href="layout.html">Início</a>
+        <a href="produtos.html">Cadastro de Produtos</a>
+        <a href="clientes.html">Cadastro de Clientes</a>
+        <a href="vendas.html">Vendas</a>
+        <a href="relatorios_selecao.html">Relatórios</a>
+        <a href="sobre.html">Sobre</a>
     </nav>
 
     <div class="filtro-container">

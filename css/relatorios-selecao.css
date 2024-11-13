@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.relatorio-btns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.relatorio-btn {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s ease;
+    margin-bottom: 70px;
+}
+
+.relatorio-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.relatorio-btn img {
+    margin-right: 15px;
+    height: 40px;
+}
+
+.relatorio-btn span {
+    font-size: 18px;
+    font-weight: bold;
+}
+/* Navegação */
+nav {
+display: flex;
+justify-content: center;
+background-color: #264653;
+padding: 10px 0;
+}
+
+nav a {
+color: white;
+padding: 14px 20px;
+text-decoration: none;
+text-transform: uppercase;
+font-weight: bold;
+background-color: #264653;
+border-radius: 5px;
+}
+
+nav a:hover {
+background-color: #1d3557;
+}
+footer {
+    text-align: center;
+    margin-top: 30px;
+}
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+.relatorio-btns {
+grid-template-columns: repeat(2, 1fr); /* Ajusta a grid para 2 colunas em telas pequenas */
+}
+
+h2 {
+font-size: 20px; /* Reduz o tamanho do título em telas menores */
+}
+
+.relatorio-btn {
+width: 200px; /* Ajusta a largura dos botões para caber melhor na tela */
+}
+
+nav {
+flex-direction: column; /* Alinha os itens do menu em uma coluna em telas menores */
+}
+
+nav a {
+width: 100%; /* Faz com que cada link ocupe toda a largura disponível */
+text-align: center; /* Centraliza o texto nos itens do menu */
+}
+}
+
+@media (max-width: 480px) {
+.relatorio-btns {
+grid-template-columns: 1fr; /* Ajusta a grid para 1 coluna em telas muito pequenas */
+}
+
+.relatorio-btn {
+width: 100%; /* Faz com que os botões ocupem toda a largura da tela */
+}
+
+h2 {
+font-size: 18px; /* Reduz ainda mais o tamanho da fonte do título em telas muito pequenas */
+}
+}

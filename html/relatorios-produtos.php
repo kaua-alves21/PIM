@@ -77,6 +77,10 @@
         <button onclick="salvarEdicao()">Salvar</button>
         <button onclick="cancelarEdicao()">Cancelar</button>
     </div>
+    <footer>
+        <p>&copy; 2024 CIFU - Controle Inteligente de Fazendo Urbana. Todos os direitos reservados.</p>
+    </footer>
+
 </body>
 
 </html>

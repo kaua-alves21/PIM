@@ -1,6 +1,7 @@
 .content {
-    width: 80%;
-    margin: 0 auto;
+    width: 1000px; /* Aumenta a largura do container para 90% */
+    max-width: 1000px; /* Define uma largura máxima para telas maiores */
+    margin: 20px auto; /* Adiciona espaçamento ao redor do container */
     padding: 20px;
     text-align: left;
     background-color: #f9f9f9;
@@ -15,6 +16,7 @@ h2 {
 
 p {
     line-height: 1.6;
+    margin-left: 5px;
 }
 
 .external-links a {
@@ -26,9 +28,15 @@ p {
     text-decoration: underline;
 }
 
-footer{
+footer {
     position: relative;
+    text-align: center;
+    padding: 10px;
+    background-color: green;
+    color: white;
+    margin-top: 20px;
 }
-h2{
-    color:black;
+
+h2 {
+    color: black;
 }

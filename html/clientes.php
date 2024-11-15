@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -8,13 +10,12 @@
     <title>Cadastro de Clientes</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/clientes.css">
-    
 </head>
 
 <body>
 
     <header>
-        <h1>CIFU - Controle Inteligente de Fazendo Urbana</h1>
+        <h1>CIFU - Controle Inteligente de Fazenda Urbana</h1>
     </header>
 
     <nav>
@@ -32,34 +33,38 @@
     <div class="container">
         <div class="form-container">
             <h2>Cadastrar Novo Cliente</h2>
-            <label for="nomeCliente">Nome do Cliente:</label>
-            <input type="text" id="nomeCliente" placeholder="Digite o nome do cliente">
-            <label for="enderecoCliente">Endereço do Cliente:</label>
-            <input type="text" id="enderecoCliente" placeholder="Digite o endereço do cliente">
-            <label for="telefoneCliente">Telefone do Cliente:</label>
-            <input type="tel" id="telefoneCliente" placeholder="Digite o telefone do cliente">
-            <label for="idadeCliente">Idade do Cliente:</label>
-            <input type="number" id="idadeCliente" placeholder="Digite a idade do cliente">
-            <label for="emailCliente">E-mail do Cliente:</label>
-            <input type="email" id="emailCliente" placeholder="Digite o e-mail do cliente">
 
-            <div class="cadastro-actions">
-                <button onclick="adicionarCliente()">Cadastrar Cliente</button>
-                <button onclick="cancelarCadastro()">Cancelar</button>
-            </div>
+            <!-- Formulário ASP.NET -->
+            <form method="post">
+                <label for="nomeCliente">Nome do Cliente:</label>
+                <input type="text" id="nomeCliente" name="Cliente.Nome" placeholder="Digite o nome do cliente" required>
 
-            <div class="mensagem" id="mensagem"></div>
+                <label for="enderecoCliente">Endereço do Cliente:</label>
+                <input type="text" id="enderecoCliente" name="Cliente.Endereco" placeholder="Digite o endereço do cliente" required>
+
+                <label for="telefoneCliente">Telefone do Cliente:</label>
+                <input type="tel" id="telefoneCliente" name="Cliente.Telefone" placeholder="Digite o telefone do cliente" required>
+
+                <label for="idadeCliente">Idade do Cliente:</label>
+                <input type="number" id="idadeCliente" name="Cliente.Idade" placeholder="Digite a idade do cliente" required>
+
+                <label for="emailCliente">E-mail do Cliente:</label>
+                <input type="email" id="emailCliente" name="Cliente.Email" placeholder="Digite o e-mail do cliente" required>
+
+                <div class="cadastro-actions">
+                    <button type="submit">Cadastrar Cliente</button>
+                    <button type="button" onclick="cancelarCadastro()">Cancelar</button>
+                </div>
+            </form>
+
+            <!-- Mensagem de Confirmação -->
+          
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 CIFU - Controle Inteligente de Fazendo Urbana. Todos os direitos reservados.</p>
+        <p>&copy; 2024 CIFU - Controle Inteligente de Fazenda Urbana. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="../js/load-content.js"></script>
-    <script src="../js/clientes.js"></script>
-   
-
-</body> 
-
+</body>
 </html>

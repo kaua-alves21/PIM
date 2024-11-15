@@ -17,7 +17,7 @@
 <body>
 
     <header>
-        <h1>Startup Segurança Alimentar</h1>
+        <h1>CIFU - Controle Inteligente de Fazendo Urbana</h1>
     </header>
 
     <!-- Navegação -->
@@ -79,7 +79,7 @@
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Startup de Segurança Alimentar. Todos os direitos reservados.</p>
+        <p>&copy; 2024 CIFU - Controle Inteligente de Fazendo Urbana. Todos os direitos reservados.</p>
     </footer>
 
 </body>

@@ -17,7 +17,7 @@
 <body>
 
     <header>
-        <h1>Startup Segurança Alimentar</h1>
+        <h1>CIFU - Controle Inteligente de Fazendo Urbana</h1>
     </header>
 
     <!-- Navegação -->

@@ -35,7 +35,7 @@
         <h2>Cadastro de Novo Usuário</h2>
         <div class="login-container">
             <div class="login-form">
-                <form id="form-cadastro" action="processa_cadastro.php" method="post">
+                <form id="form-cadastro" action="layout.php" method="post">
                     <label for="nome">Nome Completo:</label>
                     <input type="text" name="nome" id="nome" placeholder="Nome Completo" required>
 

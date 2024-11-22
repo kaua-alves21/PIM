@@ -1,4 +1,4 @@
-<!-- layout.php -->
+<!-- layout.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,7 +14,7 @@
 
     <!-- Cabeçalho -->
     <header>
-        <h1>CIFU - Controle Inteligente de Fazendo Urbana</h1>
+    <h1>CIFU - Controle Inteligente de Fazendo Urbana</h1>
         <p>&nbsp;</p>
     </header>
 
@@ -33,7 +33,7 @@
         
     </nav>
     <div class="container">
-        <div id="botao" class="shortcut-buttons">
+    <div id="botao" class="shortcut-buttons">
             <a href="produtos.php" class="button">
                 <img src="../img/produtos.png" >
                 <span>Cadastro de produtos</span>
@@ -65,7 +65,7 @@
         <p>&copy; 2024 CIFU - Controle Inteligente de Fazendo Urbana. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="../js/load-content.js"></script>
+    <script src="javascript/load-content.js"></script>
 </body>
 
 </html>

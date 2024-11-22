@@ -48,7 +48,8 @@ if (isset($_SESSION["logado"])) {
     <div class="container">
         <div class="login-container">
             <h2>Login</h2>
-            <form action="validalogin.php" method="post">
+            <br>
+            <form action="layout.php" method="post">
                 <div class="form-group">
                     <label for="login">Usuário:</label>
                     <input type="text" name="login" value="<?= $login ?>" id="login" placeholder="Nome de Usuário" required autofocus>
@@ -63,7 +64,7 @@ if (isset($_SESSION["logado"])) {
                     <label><input type="checkbox" name="lembrar" value="SIM" <?= $checked ?>> Lembrar-me</label>
                 </div>
 
-                <button type="submit" class="btn-submit">Entrar</button>
+                <button  type="submit" class="btn-submit">Entrar</button>
 
                 <div class="form-footer">
                     <a href="javascript:void(0)" class="forgot-pass">Esqueceu a senha?</a>

@@ -107,7 +107,7 @@ input[type="password"] {
 }
 
 .btn-submit {
-    background-color: #2a9d8f;
+    background-color: green;
     color: white;
     padding: 10px;
     width: 100%;
@@ -119,7 +119,7 @@ input[type="password"] {
 }
 
 .btn-submit:hover {
-    background-color: #21867a;
+    background-color: green;
 }
 
 .form-footer {
@@ -188,3 +188,4 @@ footer {
         font-size: 14px;
     }
 }
+

@@ -34,15 +34,15 @@
     <div class="container">
         <h2>Selecione o Tipo de Relatório</h2>
         <div class="relatorio-btns">
-            <a href="relatorios-produtos.html" class="relatorio-btn">
+            <a href="relatorios-produtos.php" class="relatorio-btn">
                 <img src="../img/produtos.png" alt="Relatório de Produtos">
                 <span>Relatório de Produtos</span>
             </a>
-            <a href="relatorios_clientes.html" class="relatorio-btn">
+            <a href="relatorios_clientes.php" class="relatorio-btn">
                 <img src="../img/clientes.png" alt="Relatório de Clientes">
                 <span>Relatório de Clientes</span>
             </a>
-            <a href="relatorios_vendas.html" class="relatorio-btn">
+            <a href="relatorios_vendas.php" class="relatorio-btn">
                 <img src="../img/vendas.png" alt="Relatório de Vendas">
                 <span>Relatório de Vendas</span>
             </a>

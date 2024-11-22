@@ -36,12 +36,12 @@ if (isset($_SESSION["logado"])) {
         <a href="login.php" class="login-button">
             <img id="imagem" src="../img/login icone.png" alt="Ícone de Login"> <!-- Ícone de Login -->
         </a>
-        <a href="layout.html">Início</a>
-        <a href="produtos.html">Cadastro de Produtos</a>
-        <a href="clientes.html">Cadastro de Clientes</a>
-        <a href="vendas.html">Vendas</a>
-        <a href="relatorios_selecao.html">Relatórios</a>
-        <a href="sobre.html">Sobre</a>
+         <a href="layout.php">Início</a>
+        <a href="produtos.php">Cadastro de Produtos</a>
+        <a href="clientes.php">Cadastro de Clientes</a>
+        <a href="vendas.php">Vendas</a>
+        <a href="relatorios_selecao.php">Relatórios</a>    
+        <a href="sobre.php">Sobre</a>
     </nav>
 
     <!-- Formulário de Login -->
